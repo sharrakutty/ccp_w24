@@ -51,18 +51,18 @@ nav ul li.active a {
 }
 
 .skip {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #000;
-    z-index: 1000;
-  }
-  
-  .skip:focus {
-    top: 0;
-  }
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #000;
+  z-index: 1000;
+}
+
+.skip:focus {
+  top: 0;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -158,8 +158,7 @@ a {
       -webkit-transition: none;
       transition: none;        
      }
-  
-    /*Turn off parallax*/
+
     header{
       background-attachment: initial;
     }
@@ -217,11 +216,7 @@ a[href="#main"]:focus {
     transform: translateY(0%);
 }
   
-@media screen and (max-width: 768px) {
-    a[href="#main"] {
-      display: none;
-
-    }
+@media screen and (min-width: 768px) {
     .nav {
         flex-direction: row;
         justify-content: flex-start;
@@ -238,7 +233,7 @@ a[href="#main"]:focus {
 
     .nav ul li:hover {
         background-color: #5F9C3A;
-      }
+    }  
       
 }
 
@@ -251,31 +246,34 @@ a[href="#main"]:focus {
 }
     
 @media screen and (min-width: 768px) {
-        nav ul li {
-          position: relative;
-        }
-      
-        nav ul li ul {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          display: none;
-          background-color: #306E11;
-          padding: 10px;
-          border-radius: 5px;
-        }
-      
-        nav ul li:hover ul {
-          display: block;
-        }
+  nav ul li {
+    position: relative;
+  }
 
-        .container {
-            grid-template-columns: repeat(2, 1fr);
-          } 
-        
-          .img-grid {
-            grid-template-columns: repeat(4, 1fr);
-          }
+  nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #306E11;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  nav ul li:hover ul {
+    display: block;
+  }
+  
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+
+  .img-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .skip {
+    top: 0;
+  }    
 }
   
 body.dark {
@@ -314,4 +312,30 @@ body.dark {
         filter: brightness(50%);
       }
     }
+  }
+
+  @media screen and (min-width: 992px) {
+    
+    .gallery {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      height: 300px; /* Adjust the height as needed */
+  }
+  
+  .gallery img {
+      width: 94%;
+      height: 300px; /* Adjust the height as needed */
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s;
+  }
+  
+  .gallery img:first-child {
+      opacity: 1;
+  }
+
+  
+
   }
