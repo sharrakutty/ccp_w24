@@ -237,9 +237,6 @@ a[href="#main"]:focus {
       
 }
 
-@keyframes example-animation {
-
-}
     
 .animated-element {
       animation: example-animation 1s infinite;
