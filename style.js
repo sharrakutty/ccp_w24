@@ -8,6 +8,8 @@ function showNextImage() {
     images[currentIndex].style.opacity = 1;
 }
 
+setInterval(showNextImage, 5000);
+
 const searchBox = document.getElementById('search-box');
 const resultsDiv = document.getElementById('results');
 
