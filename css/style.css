@@ -324,7 +324,7 @@ body.dark {
   }
   
   .gallery img {
-      width: 94%;
+      width: 92%;
       height: 300px; /* Adjust the height as needed */
       object-fit: cover;
       position: absolute;
@@ -336,6 +336,11 @@ body.dark {
       opacity: 1;
   }
 
-  
+  @media (prefers-reduced-motion: reduce) {
+    .gallery img {
+       animation: none;
+       transition: none;
+     }
+   }
 
   }
